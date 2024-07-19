@@ -10,35 +10,6 @@ This is a Library Management System built with Django. It allows users to manage
 - API endpoints for book and borrow operations
 - Responsive web interface
 
-## Project Structure
-
-```bash
-library_project/
-├── library_app/
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── signals.py
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── book_list.html
-│   │   ├── borrow_book.html
-│   │   ├── home.html
-│   │   ├── login.html
-│   │   ├── return_book.html
-│   │   ├── signup.html
-│   ├── urls.py
-│   ├── views.py
-│   ├── static/
-│   │   ├── styles.css
-│   │   ├── scripts.js
-├── library_project/
-│   ├── settings.py
-│   ├── urls.py
-│   ├── wsgi.py
-├── db.sqlite3
-├── manage.py
-```
 ## Installation
 ```bash
 Prerequisites
