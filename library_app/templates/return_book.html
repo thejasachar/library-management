@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Return a Book</h2>
+<form id="return-form" action="{% url 'return_book' %}" method="post">
+    {% csrf_token %}
+    <label for="user_id">User ID:</label>
+    <input type="text" id="user_id" name="user_id" required><br>
+    <label for="book_id">Book ID:</label>
+    <input type="text" id="book_id" name="book_id" required><br>
+    <button type="submit">Return Book</button>
+</form>
+<div id="fine-message"></div>
+<script>
+    $('#return-form').submit(function(e) {
+        e.preventDefault();
+        $.post($(this).attr('action'), $(this).serialize())
+            .done(function(data) {
+                alert(data.message);
+                if (data.fine_amount > 0) {
+                    $('#fine-message').text('Fine Amount: $' + data.fine_amount);
+                } else {
+                    $('#fine-message').text('');
+                }
+            })
+            .fail(function(xhr) {
+                alert('Failed to return book: ' + (xhr.responseJSON ? xhr.responseJSON.message : xhr.responseText));
+            });
+    });
+</script>
+{% endblock %}

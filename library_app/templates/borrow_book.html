@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Borrow a Book</h2>
+<form id="borrow-form" action="{% url 'borrow_book' %}" method="post">
+    {% csrf_token %}
+    <input type="text" id="user-id" name="user_id" placeholder="User ID" required>
+    <input type="text" id="book-id" name="book_id" placeholder="Book ID" required>
+    <button type="submit">Borrow</button>
+</form>
+{% endblock %}

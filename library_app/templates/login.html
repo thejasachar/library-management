@@ -1,0 +1,16 @@
+<!-- library_app/templates/login.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-form">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    {% if form.errors %}
+        <p class="error-message">Enter correct credentials.</p>
+    {% endif %}
+</div>
+{% endblock %}
