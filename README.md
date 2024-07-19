@@ -56,7 +56,9 @@ The admin interface is accessible at http://127.0.0.1:8000/admin/. Use the super
 
 ## API Endpoints
 GET /api/books/: List all books.
+
 POST /api/borrow/: Borrow a book.
+
 POST /api/return/: Return a book.
 
 # Project Files
